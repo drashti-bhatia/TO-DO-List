@@ -18,15 +18,10 @@ button {
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    /* background-color: #007bff; */
     color: #044a0b;
     border: 2px solid black;
     border-radius: 5px;
     margin-bottom: 20px;
-}
-
-button:hover {
-    /* background-color: #eff0f1; */
 }
 
 #content {
@@ -68,6 +63,10 @@ button:hover {
     resize: none;
     font-size: 14px;
     background: #fafafa;
+}
+
+.position-btn{
+    display: flex;
 }
 
 .btn {
