@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO DO</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>TO DO LIST</h1>
     <button onclick="addContent()">+ ADD</button>
     <div id="content"></div>
-    <script src="script.js"></script>
+    <!-- <?php
+        include 'db.php';
+        $sql = "SELECT * FROM tasks ORDER BY created_at DESC";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<div class='card' id='card-{$row['id']}'>
+                        <div class='card-header'>{$row['task_title']}</div>
+                        <p class='card-text'>{$row['task_description']}</p>
+                    </div>";
+            }
+        }
+        $conn->close();
+    ?> -->
+
+    <script>
+        function addContent() {
+            let card = `<div class="card">
+                        <textarea class="card-header" placeholder="Heading.."></textarea>
+                        <textarea class="card-textarea" placeholder="Write your task here..."></textarea>
+                        <div class="position-btn">
+                            <button class="btn" onclick="saveTask(this)">Save</button>
+                            <button class="btn" onclick="deleteTask(this)">Delete</button>
+                        </div>
+                    </div>`;
+
+            document.getElementById("content").innerHTML += card;
+        }
+    </script>
+
 </body>
+
 </html>
